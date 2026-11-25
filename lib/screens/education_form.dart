@@ -23,14 +23,7 @@ class _EducationFormPageState extends State<EducationFormPage> {
   DateTime? _endDate;
   bool _isOngoing = false;
 
-  final List<String> _degrees = [
-    'SMA/SMK',
-    'D3',
-    'D4',
-    'S1',
-    'S2',
-    'S3',
-  ];
+  final List<String> _degrees = ['SMA/SMK', 'D3', 'D4', 'S1', 'S2', 'S3'];
 
   @override
   void dispose() {
@@ -74,9 +67,7 @@ class _EducationFormPageState extends State<EducationFormPage> {
       labelText: label,
       hintText: hint,
       suffixIcon: suffixIcon,
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(5.0),
-      ),
+      border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0)),
     );
   }
 
@@ -183,10 +174,12 @@ class _EducationFormPageState extends State<EducationFormPage> {
                   decoration: _inputDecoration("Jenjang"),
                   initialValue: _degree,
                   items: _degrees
-                      .map((degree) => DropdownMenuItem(
-                            value: degree,
-                            child: Text(degree),
-                          ))
+                      .map(
+                        (degree) => DropdownMenuItem(
+                          value: degree,
+                          child: Text(degree),
+                        ),
+                      )
                       .toList(),
                   onChanged: (String? newValue) {
                     setState(() {
@@ -290,8 +283,9 @@ class _EducationFormPageState extends State<EducationFormPage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
-                  keyboardType:
-                      const TextInputType.numberWithOptions(decimal: true),
+                  keyboardType: const TextInputType.numberWithOptions(
+                    decimal: true,
+                  ),
                   decoration: _inputDecoration(
                     "IPK (opsional)",
                     hint: "Contoh: 3.75",
@@ -305,8 +299,9 @@ class _EducationFormPageState extends State<EducationFormPage> {
                     if (value == null || value.trim().isEmpty) {
                       return null; // opsional
                     }
-                    final gpa =
-                        double.tryParse(value.trim().replaceAll(',', '.'));
+                    final gpa = double.tryParse(
+                      value.trim().replaceAll(',', '.'),
+                    );
                     if (gpa == null) {
                       return "IPK harus berupa angka!";
                     }

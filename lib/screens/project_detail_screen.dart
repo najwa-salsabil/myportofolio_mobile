@@ -59,9 +59,7 @@ class ProjectDetailScreen extends StatelessWidget {
             ],
             Text(
               project.title,
-              style: Theme.of(context)
-                  .textTheme
-                  .headlineSmall
+              style: Theme.of(context).textTheme.headlineSmall
                   ?.copyWith(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),

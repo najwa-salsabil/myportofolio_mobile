@@ -25,7 +25,7 @@ class ResponsiveHeyoFlutter extends StatelessWidget {
                   Expanded(child: _buildKotak('Flutter', Colors.blue)),
                 ],
               );
-            } 
+            }
             // 2. Jika lebar layar < 600 (HP Portrait) -> Pakai COLUMN (Atas - Bawah)
             else {
               return Column(
@@ -51,7 +51,11 @@ class ResponsiveHeyoFlutter extends StatelessWidget {
       alignment: Alignment.center,
       child: Text(
         teks,
-        style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white),
+        style: const TextStyle(
+          fontSize: 28,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),
       ),
     );
   }

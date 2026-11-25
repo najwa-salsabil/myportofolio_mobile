@@ -44,9 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
         ..showSnackBar(
-          const SnackBar(
-            content: Text('Tidak dapat terhubung ke server.'),
-          ),
+          const SnackBar(content: Text('Tidak dapat terhubung ke server.')),
         );
     } finally {
       if (mounted) {

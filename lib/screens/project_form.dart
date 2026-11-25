@@ -30,7 +30,8 @@ class _ProjectFormPageState extends State<ProjectFormPage> {
       return isRequired ? "Project URL tidak boleh kosong!" : null;
     }
     final uri = Uri.tryParse(text);
-    final isHttp = uri != null && (uri.isScheme('http') || uri.isScheme('https'));
+    final isHttp =
+        uri != null && (uri.isScheme('http') || uri.isScheme('https'));
     if (!isHttp || uri.host.isEmpty) {
       return "Masukkan URL valid yang diawali http:// atau https://";
     }
@@ -41,9 +42,7 @@ class _ProjectFormPageState extends State<ProjectFormPage> {
     return InputDecoration(
       labelText: label,
       hintText: hint,
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(5.0),
-      ),
+      border: OutlineInputBorder(borderRadius: BorderRadius.circular(5.0)),
     );
   }
 
